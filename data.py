@@ -7,7 +7,7 @@ def read_result_file(fname):
         
         centroid_line = lines[1]
         centroid = centroid_line.strip().split(',')
-        centroid = list(map(int, centroid))
+        centroid = list(map(float, centroid))
 
         result = 1 if len(lines) > 2 else 0
 
@@ -29,6 +29,10 @@ def load_data(data_dir="data"):
         x_list.append(x)
     X = np.stack(x_list)
 
+    # normalize 
+    X -= np.min(X)
+    X /= np.max(X)
+
     print("Loaded X of shape:", X.shape)
 
     
@@ -40,6 +44,12 @@ def load_data(data_dir="data"):
         y_list.append(y)
     C = np.stack(c_list)
     Y = np.stack(y_list)
+
+    # normalize 
+    C -= np.min(C)
+    C /= np.max(C)
+
+
     print("Loaded C of shape:", C.shape)
     print("Loaded Y of shape:", Y.shape)
     

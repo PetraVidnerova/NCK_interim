@@ -1,8 +1,6 @@
 # save-the-robot
 
-
-Let's try to improve robots' welfare.
-
+Just trying to improve life of one robot.
 
 to run on haklnv:
 

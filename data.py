@@ -25,6 +25,7 @@ def load_data(data_dir="data"):
     x_list = [] 
     for name in array_names:
         x = np.loadtxt(name, delimiter=",")
+        x = x[..., np.newaxis]
         x_list.append(x)
     X = np.stack(x_list)
 

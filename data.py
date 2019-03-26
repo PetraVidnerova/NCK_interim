@@ -32,6 +32,7 @@ def load_data(data_dir="data"):
     # normalize 
     X -= np.min(X)
     X /= np.max(X)
+    X = X.astype("float32")
 
     print("Loaded X of shape:", X.shape)
 
@@ -48,7 +49,7 @@ def load_data(data_dir="data"):
     # normalize 
     C -= np.min(C)
     C /= np.max(C)
-
+    C = C.astype("float32")
 
     print("Loaded C of shape:", C.shape)
     print("Loaded Y of shape:", Y.shape)

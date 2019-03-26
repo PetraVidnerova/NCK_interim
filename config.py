@@ -7,5 +7,5 @@ centroid_shape = (3, )
 
 
 # learning params 
-epochs = 500 
+epochs = 200 
 batch_size = 16

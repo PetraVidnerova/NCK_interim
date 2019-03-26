@@ -1,5 +1,5 @@
 from keras.models import Sequential, Model
-from keras.layers import Input, Dense, concatenate, Conv2D, Flatten, MaxPooling2D
+from keras.layers import Input, Dense, concatenate, Conv2D, Flatten, MaxPooling2D, Dropout
 
 import config as cfg 
 
@@ -15,14 +15,15 @@ def downSample(input_shape):
         MaxPooling2D(pool_size=(2, 2)),
         Flatten(), 
         Dense(64, activation='relu'),
+        Dropout(0.5),
         Dense(32, activation='sigmoid')
     ], name="DownSampler")
 
-    print("=================================================================")
-    print("=                    Down Sampler:                              =")
-    print("=================================================================")
-    model.summary()
-    print()
+    #print("=================================================================")
+    #print("=                    Down Sampler:                              =")
+    #print("=================================================================")
+    #model.summary()
+    #print()
 
     return model 
 
@@ -30,15 +31,17 @@ def upSample(input_shape):
     
     model = Sequential([
         Dense(8, activation='relu', input_shape=input_shape),
+        Dropout(0.5),
         Dense(16, activation='relu'),
+        Dropout(0.5),
         Dense(32, activation='sigmoid'),
     ], name="UpSampler")
 
-    print("=================================================================")
-    print("=                    Up Sampler:                                =")
-    print("=================================================================")
-    model.summary()
-    print()
+    #print("=================================================================")
+    #print("=                    Up Sampler:                                =")
+    #print("=================================================================")
+    #model.summary()
+    #print()
 
 
     return model 
@@ -47,7 +50,9 @@ def mainNet(input_shape):
 
     model = Sequential([
         Dense(32, activation='relu', input_shape=input_shape),
+        Dropout(0.5),
         Dense(16, activation='relu'),
+        Dropout(0.5),
         Dense(1, activation='sigmoid', name='main_output'),
     ], name="MainNetwork")
 

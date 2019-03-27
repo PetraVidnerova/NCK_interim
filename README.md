@@ -10,7 +10,14 @@ $ pip install numpy
 $ pip install keras 
 $ pip install /opt/data/tensorflow-1.12.0-cp36-cp36m-linux_x86_64.whl
 $ pip install sklearn
+
+$ python test.py simple_test 
+or
+$ python test.py crossvalidation
 ```
+
+
+
 
 ### Hints:
 

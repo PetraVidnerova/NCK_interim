@@ -25,9 +25,9 @@ def load_data(data_dir="data"):
     x_list = [] 
     for name in array_names:
         x = np.loadtxt(name, delimiter=",")
-        x = x[..., np.newaxis]
         x_list.append(x)
     X = np.stack(x_list)
+    X = X[..., np.newaxis]
 
     # normalize 
     X -= np.min(X)
@@ -55,3 +55,18 @@ def load_data(data_dir="data"):
     print("Loaded Y of shape:", Y.shape)
     
     return X, C, Y
+
+
+if __name__ == "__main__": 
+
+    # just test
+
+    import matplotlib.pyplot as plt 
+
+    X, C, y = load_data()
+
+
+    x  = X[0] 
+    x = np.squeeze(x, axis=2)
+    plt.imshow(x) 
+    plt.savefig("data_image_example.eps")

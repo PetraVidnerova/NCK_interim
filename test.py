@@ -1,8 +1,11 @@
+import sys
 import numpy as np
 import tensorflow as tf
 from keras import backend as K
 # from keras.utils import plot_model
 from sklearn.model_selection import StratifiedKFold, LeaveOneOut
+
+import __main__ as main
 
 from data import load_data
 from model import createNetwork
@@ -44,8 +47,8 @@ def simple_test(X, C, y):
 
 def crossvalidation(X, C, y):
     # define 10-fold cross validation 
-    # crossval = StratifiedKFold(n_splits=10, shuffle=True)
-    crossval = LeaveOneOut()
+    crossval = StratifiedKFold(n_splits=10, shuffle=True)
+    # crossval = LeaveOneOut()
 
     cvscores = []
     for train, test in crossval.split(X, y):
@@ -86,4 +89,8 @@ if __name__ == "__main__":
     X, C, y = load_data()
     
     #simple_test(X, C, y) 
-    crossvalidation(X, C, y)
+    #crossvalidation(X, C, y)
+    
+    # choose a function to run according the first argument
+    name = sys.argv[1]
+    getattr(main, name)(X, C, y)

@@ -2,6 +2,7 @@ import sys
 import numpy as np
 import tensorflow as tf
 from keras import backend as K
+from keras.callbacks import EarlyStopping
 # from keras.utils import plot_model
 from sklearn.model_selection import StratifiedKFold, LeaveOneOut
 
@@ -32,7 +33,10 @@ def simple_test(X, C, y):
                 y,
                 epochs=cfg.epochs, 
                 batch_size=cfg.batch_size,
-                verbose=1)
+                verbose=1,
+                #callbacks=[EarlyStopping(monitor='loss', min_delta=0, patience=10)]
+    )
+
 
     # calculate accuracy
     score = network.evaluate({'image_input': X, 'centroid_input': C}, y, verbose=0)
@@ -47,8 +51,8 @@ def simple_test(X, C, y):
 
 def crossvalidation(X, C, y):
     # define 10-fold cross validation 
-    crossval = StratifiedKFold(n_splits=10, shuffle=True)
-    # crossval = LeaveOneOut()
+    # crossval = StratifiedKFold(n_splits=10, shuffle=True)
+    crossval = LeaveOneOut()
 
     cvscores = []
     for train, test in crossval.split(X, y):
@@ -75,12 +79,13 @@ def crossvalidation(X, C, y):
 
 if __name__ == "__main__":
 
+    # ! not needed anymore: use CUDA_VISIBLE_DEVICES 
     # force Keras to use only one GPU
-    num_GPU = 1 
-    config = tf.ConfigProto(allow_soft_placement=True,
-                            device_count = {'GPU' : num_GPU})
-    session = tf.Session(config=config)
-    K.set_session(session)
+    # num_GPU = 1 
+    # config = tf.ConfigProto(allow_soft_placement=True,
+    #                        device_count = {'GPU' : num_GPU})
+    # session = tf.Session(config=config)
+    # K.set_session(session)
     
     
     # load and create data 

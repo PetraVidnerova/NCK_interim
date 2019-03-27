@@ -2,40 +2,28 @@ import numpy as np
 import tensorflow as tf
 from keras import backend as K
 # from keras.utils import plot_model
-from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import StratifiedKFold, LeaveOneOut
 
 from data import load_data
 from model import createNetwork
 import config as cfg 
 
-# force Keras to use only one GPU
-num_GPU = 1 
-config = tf.ConfigProto(allow_soft_placement=True,
-                        device_count = {'GPU' : num_GPU})
-session = tf.Session(config=config)
-K.set_session(session)
 
+def simple_test(X, C, y):
 
-# load and create data 
-# X, C ... inputs 
-# y .... outputs 
-X, C, y = load_data()
+    # create network model                                              
+    network = createNetwork()                                           
+                                                                        
+    network.summary()                                                   
+    # plot_model doesn't work on haklnv (missing graphviz)              
+    #plot_model(network, to_file='network1.png')                        
+                                                                        
+                                                                        
+    # prepare for learning                                              
+    network.compile(optimizer='rmsprop',                                
+                    loss='binary_crossentropy',                         
+                    metrics=['accuracy'])                               
 
-# create network model
-network = createNetwork() 
-
-network.summary()
-# plot_model doesn't work on haklnv (missing graphviz)
-#plot_model(network, to_file='network1.png')
-
-
-# prepare for learning 
-network.compile(optimizer='rmsprop', 
-                loss='binary_crossentropy',
-                metrics=['accuracy'])
-
-
-def simple_test(network, X, C, y):
     # finaly train
     network.fit({'image_input': X, 'centroid_input': C},
                 y,
@@ -52,13 +40,15 @@ def simple_test(network, X, C, y):
     #print("Accuracy: ", 100*sum(np.rint(y_pred.ravel()) == y.ravel())/len(y) ) 
 
 
-#simple_test(network, X, C, y) 
 
-def crossvalidation(network, X, C, y):
-    # define 10-fold cross validation tes
-    kfold = StratifiedKFold(n_splits=10, shuffle=True)
+
+def crossvalidation(X, C, y):
+    # define 10-fold cross validation 
+    # crossval = StratifiedKFold(n_splits=10, shuffle=True)
+    crossval = LeaveOneOut()
+
     cvscores = []
-    for train, test in kfold.split(X, y):
+    for train, test in crossval.split(X, y):
         # create model
         model = createNetwork()
         # Compile model
@@ -79,4 +69,21 @@ def crossvalidation(network, X, C, y):
     print("%.2f%% (+/- %.2f%%)" % (np.mean(cvscores), np.std(cvscores)))
 
 
-crossvalidation(network, X, C, y)
+
+if __name__ == "__main__":
+
+    # force Keras to use only one GPU
+    num_GPU = 1 
+    config = tf.ConfigProto(allow_soft_placement=True,
+                            device_count = {'GPU' : num_GPU})
+    session = tf.Session(config=config)
+    K.set_session(session)
+    
+    
+    # load and create data 
+    # X, C ... inputs 
+    # y .... outputs 
+    X, C, y = load_data()
+    
+    #simple_test(X, C, y) 
+    crossvalidation(X, C, y)

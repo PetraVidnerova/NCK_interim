@@ -8,6 +8,7 @@ def downSample(input_shape):
     # print("downSample input shape:", input_shape)
 
     model = Sequential([
+        # TODO: do initial down sampling in load_data
         MaxPooling2D(pool_size=(4, 4), input_shape=input_shape),
         Conv2D(64, (3, 3), activation='relu'),
         MaxPooling2D(pool_size=(2, 2)),
@@ -72,7 +73,7 @@ def createNetwork():
     n_outputs = int(main_input.shape[1])
     main_output = mainNet((n_outputs,))(main_input)
     
-    network = Model(input=[image_input, centroid_input],
-                    output=main_output)
+    network = Model(inputs=[image_input, centroid_input],
+                    outputs=main_output)
     
     return network 

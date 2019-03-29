@@ -14,7 +14,7 @@ def read_result_file(fname):
     return centroid, result
     
 
-def load_data(data_dir="data"):
+def load_data(data_dir="data", format="channels_last"):
 
     dir_names = [ directory.name for directory in os.scandir(data_dir) if directory.is_dir() ] 
     array_names = [ f"{data_dir}/{name}/{name}_array.txt" for name in dir_names ]
@@ -27,7 +27,8 @@ def load_data(data_dir="data"):
         x = np.loadtxt(name, delimiter=",")
         x_list.append(x)
     X = np.stack(x_list)
-    X = X[..., np.newaxis]
+    X = X[..., np.newaxis] if format == "channels_last" else X[:, np.newaxis, ...]
+    
 
     # normalize 
     X -= np.min(X)

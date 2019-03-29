@@ -34,7 +34,7 @@ def simple_test(X, C, y):
                 epochs=cfg.epochs, 
                 batch_size=cfg.batch_size,
                 verbose=1,
-                #callbacks=[EarlyStopping(monitor='loss', min_delta=0, patience=10)]
+                #callbacks=[EarlyStopping(monitor='acc', min_delta=0, patience=100, verbose=1)]
     )
 
 
@@ -91,7 +91,7 @@ if __name__ == "__main__":
     # load and create data 
     # X, C ... inputs 
     # y .... outputs 
-    X, C, y = load_data()
+    X, C, y = load_data(format=K.image_data_format())
     
     #simple_test(X, C, y) 
     #crossvalidation(X, C, y)

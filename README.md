@@ -1,6 +1,8 @@
-# save-the-robot
+# NCK_interim
 
-Just trying to improve life of one robot.
+Results and codes from NCK project.
+
+
 
 to run on haklnv:
 

@@ -4,7 +4,7 @@
 D. Coufal, F. Hakl, P. Vidnerová. 
 The Czech Academy of Sciences, Institute of Computer Science
 
-Repository for code created during the NCK project (TN01000024). 
+Repository for software tools created during the NCK project (TN01000024). 
 
 **Contents**:
 

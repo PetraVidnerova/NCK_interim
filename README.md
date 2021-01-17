@@ -1,38 +1,15 @@
-# NCK_interim
+# NCK interim 
 
-Results and codes from NCK project.
+**Authors**: 
+D. Coufal, F. Hakl, P. Vidnerová. 
+The Czech Academy of Sciences, Institute of Computer Science
 
+Repository for code created during the NCK project (TN01000024). 
 
+**Contents**:
 
-to run on haklnv:
+NCK_2019 - scripts created during the year 2019 
+NCK_2020 - software tools created during the year 2020 
 
-```
-# in virtual environment
-$ pip install numpy
-$ pip install keras 
-$ pip install /opt/data/tensorflow-1.12.0-cp36-cp36m-linux_x86_64.whl
-$ pip install sklearn
-
-$ CUDA_VISIBLE_DEVICES=0 python test.py simple_test 
-or
-$ CUDA_VISIBLE_DEVICES=0 python test.py crossvalidation
-```
-
-
-
-
-### Hints:
-
-[CUDA_VISIBLE_DEVICES](https://devblogs.nvidia.com/cuda-pro-tip-control-gpu-visibility-cuda_visible_devices/)
-
-> To use it, set CUDA_VISIBLE_DEVICES to a comma-separated list of
-> device IDs to make only those devices visible to the application.
-> Note that you can use this technique both to mask out devices or to
-> change the visibility order of devices so that the CUDA runtime
-> enumerates them in a specific order.
-
-
-### Architecture 
-
-![alt text](misc/network1.png "schema")
+AnANAS - the software library for automatic architecture selection, 2020. 
 

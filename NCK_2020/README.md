@@ -50,7 +50,7 @@ Commands:
 
 Learning progress for DEPTH=2 (orange), DEPTH=4 (dark blue), DEPTH=6 (red) a DEPTH=8 (light blue)
 
-<img src="assets/loss.jpg" alt="loss" style="width: 938px;"/>
+<img src="../assets/loss.jpg" alt="loss" style="width: 938px;"/>
 
 ## GANs  - nck_dcgan, nck_dcganc:
 ```
@@ -65,9 +65,9 @@ Commands:
     <tr><td style="text-align:center; font-size: large" >DCGAN</td>
         <td>&nbsp;</td>
         <td style="text-align:center; font-size: large">cDCGAN</td></tr>
-    <tr><td><img src="assets/progress_dcgan.gif" alt="dcgan" style="width: 256px;"/></td>
+    <tr><td><img src="../assets/progress_dcgan.gif" alt="dcgan" style="width: 256px;"/></td>
         <td>&nbsp;</td>
-        <td><img src="assets/progress_dcganc.gif" alt="dcgan" style="width: 256px;"/></td>
+        <td><img src="../assets/progress_dcganc.gif" alt="dcgan" style="width: 256px;"/></td>
     </tr>    
 </table>    
 
@@ -84,17 +84,8 @@ Commands:
     <tr><td style="text-align:center; font-size: large" >LSGAN</td>
         <td>&nbsp;</td>
         <td style="text-align:center; font-size: large">cLSGAN</td></tr>
-    <tr><td><img src="assets/progress_lsgan.gif" alt="lsgan" style="width: 256px;"/></td>
+    <tr><td><img src="../assets/progress_lsgan.gif" alt="lsgan" style="width: 256px;"/></td>
         <td>&nbsp;</td>
-        <td><img src="assets/progress_lsganc.gif" alt="lsganc" style="width: 256px;"/></td>
+        <td><img src="../assets/progress_lsganc.gif" alt="lsganc" style="width: 256px;"/></td>
     </tr>    
 </table>    
-
-## Acknowledgement: 
-This work  was supported by the TAČR grant TN01000024
-and institutional support of the Institute of Computer Science RVO 67985807.
-
-
-```python
-
-```

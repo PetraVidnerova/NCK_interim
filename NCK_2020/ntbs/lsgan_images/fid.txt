@@ -1,0 +1,11 @@
+001_FID 388.52, time 10.05 sec
+005_FID 415.71, time 7.26 sec
+010_FID 409.71, time 8.24 sec
+015_FID 414.05, time 8.04 sec
+020_FID 397.31, time 8.19 sec
+025_FID 376.42, time 9.31 sec
+030_FID 368.67, time 8.50 sec
+035_FID 381.92, time 8.33 sec
+040_FID 354.49, time 7.92 sec
+045_FID 411.77, time 7.92 sec
+050_FID 389.81, time 8.16 sec

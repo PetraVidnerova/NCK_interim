@@ -65,9 +65,9 @@ Commands:
     <tr><td style="text-align:center; font-size: large" >DCGAN</td>
         <td>&nbsp;</td>
         <td style="text-align:center; font-size: large">cDCGAN</td></tr>
-    <tr><td><img src="../assets/progress_dcgan.gif" alt="dcgan" style="width: 256px;"/></td>
+    <tr><td><img src="assets/progress_dcgan.gif" alt="dcgan" style="width: 256px;"/></td>
         <td>&nbsp;</td>
-        <td><img src="../assets/progress_dcganc.gif" alt="dcgan" style="width: 256px;"/></td>
+        <td><img src="assets/progress_dcganc.gif" alt="dcgan" style="width: 256px;"/></td>
     </tr>    
 </table>    
 
@@ -84,8 +84,13 @@ Commands:
     <tr><td style="text-align:center; font-size: large" >LSGAN</td>
         <td>&nbsp;</td>
         <td style="text-align:center; font-size: large">cLSGAN</td></tr>
-    <tr><td><img src="../assets/progress_lsgan.gif" alt="lsgan" style="width: 256px;"/></td>
+    <tr><td><img src="assets/progress_lsgan.gif" alt="lsgan" style="width: 256px;"/></td>
         <td>&nbsp;</td>
-        <td><img src="../assets/progress_lsganc.gif" alt="lsganc" style="width: 256px;"/></td>
+        <td><img src="assets/progress_lsganc.gif" alt="lsganc" style="width: 256px;"/></td>
     </tr>    
 </table>    
+
+
+```python
+
+```

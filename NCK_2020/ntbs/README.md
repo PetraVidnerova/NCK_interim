@@ -8,8 +8,3 @@ FID score implementation follows
 
 
 
-
-
-```python
-
-```

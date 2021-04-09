@@ -50,7 +50,7 @@ Commands:
 
 Learning progress for DEPTH=2 (orange), DEPTH=4 (dark blue), DEPTH=6 (red) a DEPTH=8 (light blue)
 
-<img src="../assets/loss.jpg" alt="loss" style="width: 938px;"/>
+<img src="./assets/loss.jpg" alt="loss" style="width: 938px;"/>
 
 ## GANs  - nck_dcgan, nck_dcganc:
 ```

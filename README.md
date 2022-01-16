@@ -7,9 +7,9 @@ The Czech Academy of Sciences, Institute of Computer Science
 Repository for software tools created during the NCK project. 
 
 **Contents**:
-
++ [NCK_2021](https://github.com/PetraVidnerova/NCK_interim/tree/master/NCK_2021) - software tools created during the year 2021 
 + [NCK_2020](https://github.com/PetraVidnerova/NCK_interim/tree/master/NCK_2020) - software tools created during the year 2020 
-+ [AnANAS](https://github.com/PetraVidnerova/AnANAS) - the software library for automatic architecture selection, 2020. 
++ [AnANAS](https://github.com/PetraVidnerova/AnANAS) - the software library for automatic architecture selection, 2020/21. 
 + [NCK_2019](https://github.com/PetraVidnerova/NCK_interim/tree/master/NCK_2019) - scripts created during the year 2019 
 
 **Acknowledgement**:
